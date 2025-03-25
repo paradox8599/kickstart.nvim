@@ -39,7 +39,7 @@ return {
           deleted = '',
           renamed = '➜',
           untracked = '',
-          ignored = '',
+          ignored = '◌',
           unstaged = '✗',
           staged = '',
           conflict = '',
