@@ -47,6 +47,7 @@ return {
     spec = {
       { '<leader>f', group = '[F]ind' },
       { '<leader>u', group = 'UI/UX' },
+      { '<leader>p', group = 'Plugins' },
     },
   },
 }
