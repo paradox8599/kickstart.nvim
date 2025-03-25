@@ -17,7 +17,7 @@ return {
         vim.cmd.Neotree 'focus'
       end
     end, { desc = 'Toggle Explorer Focus' })
-    vim.keymap.set('n', '<leader>bf', '<cmd>Neotree buffers reveal float<cr>', { desc = 'Find Buffer' })
+    vim.keymap.set('n', '<leader>bb', '<cmd>Neotree buffers reveal float<cr>', { desc = 'Find Buffer' })
 
     -- General options
     opts.close_if_last_window = true

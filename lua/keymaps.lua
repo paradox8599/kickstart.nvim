@@ -10,9 +10,12 @@ end
 -- See `:help hlsearch`
 map('<Esc>', '<cmd>nohlsearch<cr>', 'Clear search highlights')
 
--- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
+-- This won't work in all terminal emulators/tmux/etc. Try your own mapping
 -- or just use <C-\><C-n> to exit terminal mode
 -- vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+
+-- Diagnostic keymaps
+-- vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
@@ -22,11 +25,12 @@ map('<C-l>', '<C-w><C-l>', 'Move focus to the right window')
 map('<C-j>', '<C-w><C-j>', 'Move focus to the lower window')
 map('<C-k>', '<C-w><C-k>', 'Move focus to the upper window')
 
--- Diagnostic keymaps
--- vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+map('<leader>k', '<cmd>b#<cr>', 'Last buffer')
 
 map('<leader>y', '"+y', 'Yank to system clipboard', { 'n', 'x' })
 map('<leader>p', '"_dP', 'Paste without yank', { 'x' })
+map('J', 'mzJ`z', 'Keep cursor position when J')
+map('<leader>lc', '<cmd>LspRestart<cr>', 'Restart LSP')
 
 map('<C-q>', '<cmd>quit<cr>', 'Quit')
 map('<C-s>', '<cmd>w<cr>', 'Save')
