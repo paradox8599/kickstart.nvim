@@ -52,7 +52,7 @@ return {
       position = 'left',
       width = 30,
       mappings = {
-        ['<space>'] = 'toggle_node',
+        ['<tab>'] = 'toggle_node',
         ['<2-LeftMouse>'] = 'open',
         ['<cr>'] = 'open',
         ['l'] = 'open',
