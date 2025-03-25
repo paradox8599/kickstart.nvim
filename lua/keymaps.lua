@@ -29,3 +29,4 @@ map('<leader>y', '"+y', 'Yank to system clipboard', { 'n', 'x' })
 map('<leader>p', '"_dP', 'Paste without yank', { 'x' })
 
 map('<C-q>', '<cmd>quit<cr>', 'Quit')
+map('<C-s>', '<cmd>w<cr>', 'Save')
