@@ -15,27 +15,6 @@ require('neo-tree').setup {
   enable_git_status = true,
   enable_diagnostics = true,
   sort_case_insensitive = true,
-  default_component_configs = {
-    indent = { padding = 1 },
-    icon = {
-      folder_closed = '',
-      folder_open = '',
-      folder_empty = '',
-    },
-    git_status = {
-      symbols = {
-        added = '',
-        modified = '',
-        deleted = '',
-        renamed = '➜',
-        untracked = '',
-        ignored = '◌',
-        unstaged = '✗',
-        staged = '',
-        conflict = '',
-      },
-    },
-  },
 
   -- Window options
   window = {
@@ -123,6 +102,50 @@ require('neo-tree').setup {
         ['<bs>'] = 'navigate_up',
         ['.'] = 'set_root',
       },
+    },
+  },
+
+  default_component_configs = {
+    indent = { padding = 1 },
+    git_status = {
+      symbols = {
+        added = '',
+        modified = '',
+        deleted = '',
+        renamed = '➜',
+        untracked = '',
+        ignored = '◌',
+        unstaged = '✗',
+        staged = '',
+        conflict = '',
+      },
+    },
+
+    icon = {
+      provider = function(icon, node)
+        local text, hl
+        local mini_icons = require 'mini.icons'
+        if node.type == 'file' then
+          text, hl = mini_icons.get('file', node.name)
+        elseif node.type == 'directory' then
+          text, hl = mini_icons.get('directory', node.name)
+          if node:is_expanded() then
+            text = nil
+          end
+        end
+
+        if text then
+          icon.text = text
+        end
+        if hl then
+          icon.highlight = hl
+        end
+      end,
+    },
+    kind_icon = {
+      provider = function(icon, node)
+        icon.text, icon.highlight = require('mini.icons').get('lsp', node.extra.kind.name)
+      end,
     },
   },
 }
