@@ -1,36 +1,27 @@
 -- [[ General Keymaps ]]
 -- Plugin specific keymaps are defined in their own files
 
--- See `:help vim.keymap.set()`
-local map = function(keys, func, desc, mode)
-  mode = mode or 'n'
-  vim.keymap.set(mode, keys, func, { desc = desc })
-end
-
--- See `:help hlsearch`
-map('<Esc>', '<cmd>nohlsearch<cr>', 'Clear search highlights')
-
--- This won't work in all terminal emulators/tmux/etc. Try your own mapping
--- or just use <C-\><C-n> to exit terminal mode
--- vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
-
 -- Diagnostic keymaps
 -- vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<cr>', { desc = 'Clear search highlights' })
 
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
 --  See `:help wincmd` for a list of all window commands
-map('<C-h>', '<C-w><C-h>', 'Move focus to the left window')
-map('<C-l>', '<C-w><C-l>', 'Move focus to the right window')
-map('<C-j>', '<C-w><C-j>', 'Move focus to the lower window')
-map('<C-k>', '<C-w><C-k>', 'Move focus to the upper window')
+vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
+vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
+vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
+vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
-map('<leader>k', '<cmd>b#<cr>', 'Last buffer')
+vim.keymap.set('n', '\\', '<CMD>:sp<CR>', { desc = 'Split window horizontally' })
+vim.keymap.set('n', '|', '<CMD>:vsp<CR>', { desc = 'Split window vertically' })
 
-map('<leader>y', '"+y', 'Yank to system clipboard', { 'n', 'x' })
-map('<leader>p', '"_dP', 'Paste without yank', { 'x' })
-map('J', 'mzJ`z', 'Keep cursor position when J')
-map('<leader>lc', '<cmd>LspRestart<cr>', 'Restart LSP')
+vim.keymap.set('n', '<leader>k', '<cmd>b#<cr>', { desc = 'Last buffer' })
 
-map('<C-q>', '<cmd>quit<cr>', 'Quit')
-map('<C-s>', '<cmd>w<cr>', 'Save')
+vim.keymap.set({ 'n', 'x' }, '<leader>y', '"+y', { desc = 'Yank to system clipboard' })
+vim.keymap.set('x', '<leader>p', '"_dP', { desc = 'Paste without yank' })
+vim.keymap.set('n', 'J', 'mzJ`z', { desc = 'Keep cursor position when J' })
+vim.keymap.set('n', '<leader>lc', '<cmd>LspRestart<cr>', { desc = 'Restart LSP' })
+vim.keymap.set('n', '<C-q>', '<cmd>quit<cr>', { desc = 'Quit' })
+vim.keymap.set('n', '<C-s>', '<cmd>w<cr>', { desc = 'Save' })
