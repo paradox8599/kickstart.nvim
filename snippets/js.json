@@ -1,0 +1,13 @@
+{
+  "gql": {
+    "prefix": [
+      "gql"
+    ],
+    "body": [
+      "/* GraphQL */`",
+      "\t$0",
+      "`"
+    ],
+    "description": "gql"
+  }
+}
