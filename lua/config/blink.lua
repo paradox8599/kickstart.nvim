@@ -59,7 +59,7 @@ require('blink.cmp').setup {
 
   -- Use a preset for snippets, check the snippets documentation for more information
   -- 'default' | 'luasnip' | 'mini_snippets'
-  snippets = { preset = 'default' },
+  snippets = { preset = 'luasnip' },
 
   signature = {
     enabled = true,
