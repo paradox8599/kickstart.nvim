@@ -24,8 +24,8 @@ vim.keymap.set('n', '\\', '<CMD>:sp<CR>', { desc = 'Split window horizontally' }
 vim.keymap.set('n', '|', '<CMD>:vsp<CR>', { desc = 'Split window vertically' })
 
 -- yank
-vim.keymap.set({ 'n', 'x' }, '<leader>y', '"+y', { desc = 'Yank to system clipboard' })
-vim.keymap.set('x', '<leader>p', '"_dP', { desc = 'Paste without yank' })
+vim.keymap.set({ 'n', 'x' }, '<leader>y', '"+y', { desc = 'Yank to system clipboard', noremap = true })
+vim.keymap.set('x', '<leader>p', '"_dP', { desc = 'Paste without yank', noremap = true })
 
 -- navigation
 vim.keymap.set('n', '<leader>k', '<cmd>b#<cr>', { desc = 'Last buffer' })
@@ -37,3 +37,8 @@ vim.keymap.set('n', '<leader>lc', '<cmd>LspRestart<cr>', { desc = 'Restart LSP' 
 -- actions
 vim.keymap.set('n', '<C-q>', '<cmd>quit<cr>', { desc = 'Quit' })
 vim.keymap.set('n', '<C-s>', '<cmd>w<cr>', { desc = 'Save' })
+
+-- lua
+vim.keymap.set('n', '<space>X', '<cmd>source %<cr>', { desc = 'Run this lua file' })
+vim.keymap.set('n', '<space>x', ':.lua<cr>', { desc = 'Run this line' })
+vim.keymap.set('v', '<space>x', ':lua<cr>', { desc = 'Run selection' })
