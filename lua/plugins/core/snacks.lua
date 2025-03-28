@@ -76,7 +76,7 @@ return {
 
     -- hide active terminal
     {
-      '<C-h>',
+      '<C-t>',
       function()
         vim.cmd 'hide'
       end,
