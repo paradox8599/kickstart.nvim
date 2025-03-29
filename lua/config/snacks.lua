@@ -6,6 +6,7 @@ snacks.setup {
   git = { enabled = true },
   lazygit = { enabled = true },
   quickfile = { enabled = true },
+  picker = { ui_select = true },
   words = {
     enabled = true,
     debounce = 200, -- time in ms to wait before updating
