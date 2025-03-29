@@ -1,7 +1,7 @@
 return {
   'L3MON4D3/LuaSnip',
   event = 'VeryLazy',
-  config = function(plugin, opts)
+  config = function()
     -- add more custom luasnip configuration such as filetype extend or custom snippets
     local luasnip = require 'luasnip'
     luasnip.filetype_extend('javascript', { 'javascriptreact' })
