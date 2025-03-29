@@ -1,11 +1,19 @@
 -- Highlight, edit, and navigate code
 
 return {
-  'nvim-treesitter/nvim-treesitter',
+  {
+    'nvim-treesitter/nvim-treesitter',
 
-  build = ':TSUpdate',
+    build = ':TSUpdate',
 
-  config = function()
-    require 'config.treesitter'
-  end,
+    event = 'VeryLazy',
+
+    dependencies = {
+      { 'nvim-treesitter/nvim-treesitter-textobjects', lazy = true },
+    },
+
+    config = function()
+      require 'config.treesitter'
+    end,
+  },
 }
