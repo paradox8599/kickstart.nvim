@@ -45,9 +45,10 @@ return {
 
     -- Document existing key chains
     spec = {
-      { '<leader>f', group = '[F]ind' },
+      { '<leader>f', group = 'Find' },
       { '<leader>u', group = 'UI/UX' },
       { '<leader>p', group = 'Plugins' },
+      { '<leader>b', group = 'Buffer' },
     },
   },
 }

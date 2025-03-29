@@ -10,22 +10,14 @@ end
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
   callback = function(event)
-    local map = function(keys, func, desc, mode)
-      mode = mode or 'n'
-      vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
-    end
-
-    local builtin = require 'telescope.builtin'
-    map('gd', builtin.lsp_definitions, '[G]oto [D]efinition')
-    map('gr', builtin.lsp_references, '[G]oto [R]eferences')
-    map('gI', builtin.lsp_implementations, '[G]oto [I]mplementation')
-    map('gt', builtin.lsp_type_definitions, '[T]ype Definition')
-    map('<leader>ds', builtin.lsp_document_symbols, '[D]ocument [S]ymbols')
-    map('<leader>ws', builtin.lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
-    map('<leader>lr', vim.lsp.buf.rename, '[R]ename')
-    map('<leader>la', vim.lsp.buf.code_action, 'Code [A]ction', { 'n', 'x' })
-    -- NOTE: This is not Goto Definition, this is Goto Declaration. For example, in C this would take you to the header.
-    map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+    local picker = require 'snacks.picker'
+    vim.keymap.set('n', 'gd', picker.lsp_definitions, { desc = 'Definition' })
+    vim.keymap.set('n', 'gr', picker.lsp_references, { desc = 'References' })
+    vim.keymap.set('n', 'gI', picker.lsp_implementations, { desc = 'Implementation' })
+    vim.keymap.set('n', 'gt', picker.lsp_type_definitions, { desc = 'Type Definition' })
+    vim.keymap.set('n', 'gD', picker.lsp_declarations, { desc = 'Declaration' })
+    vim.keymap.set('n', '<leader>fs', picker.lsp_symbols, { desc = '[B]uffer Document [S]ymbols' })
+    vim.keymap.set('n', '<leader>fS', picker.lsp_workspace_symbols, { desc = '[W]orkspace [S]ymbols' })
 
     -- Highlight ref under cursor, see `:help CursorHold`
     local client = vim.lsp.get_client_by_id(event.data.client_id)
@@ -55,9 +47,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
     -- The following code creates a keymap to toggle inlay hints in your code, if the language server you are using supports them
     if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then
-      map('<leader>uh', function()
+      vim.keymap.set('n', '<leader>uh', function()
         vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
-      end, 'Toggle Inlay [H]ints')
+      end, { desc = 'Toggle Inlay [H]ints' })
     end
   end,
 })
