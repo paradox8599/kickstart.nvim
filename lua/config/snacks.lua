@@ -1,4 +1,7 @@
-require('snacks').setup {
+local snacks = require 'snacks'
+local picker = snacks.picker
+
+snacks.setup {
   bigfile = { notify = true, size = 1 * 1024 * 1024 },
   git = { enabled = true },
   lazygit = { enabled = true },
@@ -14,6 +17,7 @@ require('snacks').setup {
   },
   terminal = { enabled = true },
   scratch = {},
+  explorer = { replace_netrw = true },
 
   indent = {
     enabled = true,
@@ -80,3 +84,35 @@ require('snacks').setup {
     },
   },
 }
+
+-- picker
+
+vim.keymap.set('n', '<leader>f<Enter>', picker.resume, { desc = 'Resume' })
+vim.keymap.set('n', '<leader>f;', picker.pickers, { desc = 'Picker Sources' })
+vim.keymap.set('n', '<leader>fp', picker.projects, { desc = 'Projects' })
+vim.keymap.set('n', '<leader>ff', picker.files, { desc = 'Files' })
+vim.keymap.set('n', '<leader>fF', function()
+  picker.files { ignored = true, hidden = true }
+end, { desc = 'Find All Files' })
+vim.keymap.set('n', '<leader>fg', picker.git_files, { desc = 'Git Files' })
+vim.keymap.set('n', '<leader>fc', picker.grep_word, { desc = 'Current Word' })
+vim.keymap.set('n', '<leader>fb', picker.buffers, { desc = 'Buffers' })
+vim.keymap.set('n', '<leader>fd', picker.diagnostics, { desc = 'Diagnostics' })
+vim.keymap.set('n', '<leader>fd', picker.diagnostics_buffer, { desc = 'Buffer Diagnostics' })
+vim.keymap.set('n', '<leader>fn', picker.notifications, { desc = 'Notifications History' })
+vim.keymap.set('n', '<leader>f:', picker.command_history, { desc = 'Command History' })
+vim.keymap.set('n', '<leader>fk', picker.keymaps, { desc = 'Keymaps' })
+vim.keymap.set('n', '<leader>fh', picker.help, { desc = 'Help' })
+vim.keymap.set('n', '<leader>f/', picker.search_history, { desc = 'Search History' })
+vim.keymap.set('n', "<leader>f'", picker.registers, { desc = 'Registers' })
+vim.keymap.set('n', '<leader>fC', picker.commands, { desc = 'Commands' })
+vim.keymap.set('n', '<leader>fj', picker.jumps, { desc = 'Jumps' })
+vim.keymap.set('n', '<leader>fi', picker.icons, { desc = 'Icons' })
+vim.keymap.set('n', '<leader>fm', picker.marks, { desc = 'Marks' })
+vim.keymap.set('n', '<leader>fu', picker.undo, { desc = 'Undo History' })
+vim.keymap.set('n', '<leader>fT', picker.colorschemes, { desc = 'Theme' })
+
+vim.keymap.set('n', '<leader>fw', picker.grep, { desc = 'Grep Words' })
+vim.keymap.set('n', '<leader>fW', function()
+  picker.grep { ignored = true, hidden = true }
+end, { desc = 'Grep All Words' })

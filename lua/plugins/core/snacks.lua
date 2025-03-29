@@ -16,25 +16,18 @@ return {
 
   keys = {
     {
-      '<leader>gb',
-      function()
-        require('snacks').git.blame_line()
-      end,
-      desc = 'Git blame line',
-    },
-    {
       '<leader>gf',
       function()
         require('snacks').lazygit.log_file()
       end,
-      desc = 'Lazygit Current File History',
+      desc = 'Git History (Current File)',
     },
     {
       '<leader>gl',
       function()
         require('snacks').lazygit.log()
       end,
-      desc = 'Lazygit Log (cwd)',
+      desc = 'Git Log',
     },
     {
       '<leader>br',

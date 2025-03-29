@@ -45,22 +45,3 @@ vim.keymap.set('v', '<leader>r', ':lua<cr>', { desc = 'Run selection' })
 vim.keymap.set('n', '<leader>lc', '<cmd>LspRestart<cr>', { desc = 'Restart LSP' })
 vim.keymap.set('n', '<leader>lr', vim.lsp.buf.rename, { desc = '[R]ename' })
 vim.keymap.set({ 'n', 'x' }, '<leader>la', vim.lsp.buf.code_action, { desc = 'Code [A]ction' })
-
--- picker
-local picker = require 'snacks.picker'
-vim.keymap.set('n', '<leader>fp', picker.pickers, { desc = 'Select [P]icker Source' })
-vim.keymap.set('n', '<leader>fT', picker.colorschemes, { desc = 'Find [T]heme' })
-vim.keymap.set('n', '<leader>fh', picker.help, { desc = 'Find [H]elp' })
-vim.keymap.set('n', '<leader>fk', picker.keymaps, { desc = 'Find [K]eymaps' })
-vim.keymap.set('n', '<leader>ff', picker.files, { desc = 'Find [F]iles' })
-vim.keymap.set('n', '<leader>fF', function()
-  picker.files { ignored = true, hidden = true }
-end, { desc = 'Find All [F]iles' })
-vim.keymap.set('n', '<leader>fw', picker.grep, { desc = 'Find [W]ords' })
-vim.keymap.set('n', '<leader>fW', function()
-  picker.grep { ignored = true, hidden = true }
-end, { desc = 'Find All [W]ords' })
-vim.keymap.set('n', '<leader>fc', picker.grep_word, { desc = 'Find [C]urrent Word' })
-vim.keymap.set('n', '<leader>fd', picker.diagnostics, { desc = 'Find [D]iagnostics' })
-vim.keymap.set('n', '<leader>f<Enter>', picker.resume, { desc = 'Resume' })
-vim.keymap.set('n', '<leader>fo', picker.buffers, { desc = 'Find [O]ld Files' })
