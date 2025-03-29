@@ -42,3 +42,5 @@ vim.keymap.set('n', '<C-s>', '<cmd>w<cr>', { desc = 'Save' })
 vim.keymap.set('n', '<space>X', '<cmd>source %<cr>', { desc = 'Run this lua file' })
 vim.keymap.set('n', '<space>x', ':.lua<cr>', { desc = 'Run this line' })
 vim.keymap.set('v', '<space>x', ':lua<cr>', { desc = 'Run selection' })
+
+vim.keymap.set('n', '<leader>fT', require('snacks').picker.colorschemes, { desc = '[F]ind [T]heme' })

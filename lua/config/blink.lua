@@ -43,7 +43,7 @@ require('blink.cmp').setup {
 
     documentation = { auto_show = true, auto_show_delay_ms = 150 },
 
-    list = { selection = { preselect = false, auto_insert = false } },
+    list = { selection = { preselect = false, auto_insert = true } },
 
     menu = { auto_show = true },
 
