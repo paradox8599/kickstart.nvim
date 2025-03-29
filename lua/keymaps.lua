@@ -33,6 +33,7 @@ vim.keymap.set('n', 'J', 'mzJ`z', { desc = 'Keep cursor position when J' })
 
 -- shortcuts
 vim.keymap.set('n', '<C-q>', '<cmd>quit<cr>', { desc = 'Quit' })
+vim.keymap.set('n', '<leader>q', '<cmd>quit<cr>', { desc = 'Quit' })
 vim.keymap.set('n', '<C-s>', '<cmd>w<cr>', { desc = 'Save' })
 vim.keymap.set('n', '<leader>c', '<cmd>bd<cr>', { desc = 'Save' })
 
