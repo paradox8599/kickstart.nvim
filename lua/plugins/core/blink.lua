@@ -6,6 +6,8 @@ return {
 
     build = 'cargo build --release',
 
+    lazy = true,
+
     config = function()
       require 'config.blink'
     end,

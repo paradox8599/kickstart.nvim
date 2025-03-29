@@ -3,6 +3,8 @@
 return {
   'echasnovski/mini.icons',
 
+  lazy = true,
+
   dependencies = {
     'echasnovski/mini.statusline',
   },
