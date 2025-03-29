@@ -7,6 +7,11 @@ snacks.setup {
   lazygit = { enabled = true },
   quickfile = { enabled = true },
   picker = { ui_select = true },
+  terminal = { enabled = true },
+  scratch = {},
+
+  notifier = { enabled = true, timeout = 3000 },
+
   words = {
     enabled = true,
     debounce = 200, -- time in ms to wait before updating
@@ -16,9 +21,6 @@ snacks.setup {
     jumplist = true, -- set jump point before jumping
     modes = { 'n', 'i', 'c' }, -- modes to show references
   },
-  terminal = { enabled = true },
-  scratch = {},
-  explorer = { replace_netrw = true },
 
   indent = {
     enabled = true,
@@ -86,8 +88,10 @@ snacks.setup {
   },
 }
 
--- picker
+-- toggler
+vim.keymap.set('n', '<leader>uD', snacks.notifier.hide, { desc = 'Dismiss notifications' })
 
+-- picker
 vim.keymap.set('n', '<leader>f<Enter>', picker.resume, { desc = 'Resume' })
 vim.keymap.set('n', '<leader>f;', picker.pickers, { desc = 'Picker Sources' })
 vim.keymap.set('n', '<leader>fp', picker.projects, { desc = 'Projects' })
