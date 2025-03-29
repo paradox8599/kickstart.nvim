@@ -13,6 +13,7 @@ require('lazy').setup(
     -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
     { import = 'plugins.core' },
+    { import = 'plugins.editing' },
     { import = 'plugins.git' },
     { import = 'plugins.lsp' },
     { import = 'plugins.ui' },
