@@ -6,6 +6,6 @@ return {
   opts = {},
 
   keys = {
-    { '<leader>gh', '<cmd>OpenGitHubUrlUnderCursor<cr>', desc = 'Open github url' },
+    { 'gh', '<cmd>OpenGitHubUrlUnderCursor<cr>', desc = 'Open github url' },
   },
 }
