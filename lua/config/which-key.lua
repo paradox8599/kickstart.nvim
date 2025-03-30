@@ -44,5 +44,6 @@ require('which-key').setup {
     { '<leader>u', group = 'UI/UX' },
     { '<leader>p', group = 'Plugins' },
     { '<leader>b', group = 'Buffer' },
+    { '<leader>s', group = 'Search and Replace' },
   },
 }

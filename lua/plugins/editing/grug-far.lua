@@ -14,8 +14,6 @@ return {
   opts = {},
 
   keys = {
-    { '<leader>s', desc = 'Search and Replace' },
-
     {
       mode = { 'n', 'x' },
       '<leader>ss',
@@ -27,7 +25,7 @@ return {
           },
         }
       end,
-      desc = 'File Search and Replace',
+      desc = 'Search and Replace: Buffer',
     },
 
     {
@@ -38,7 +36,7 @@ return {
           transient = true,
         }
       end,
-      desc = 'Global Search and Replace',
+      desc = 'Search & Replace: Global',
     },
 
     {
@@ -53,7 +51,7 @@ return {
           },
         }
       end,
-      desc = 'File Search Cursor Word',
+      desc = 'Search & Replace: Cursor Word (Buffer)',
     },
 
     {
@@ -67,7 +65,7 @@ return {
           },
         }
       end,
-      desc = 'Global Search Cursor Word',
+      desc = 'Search & Replace: Cursor Word (Global)',
     },
   },
 }
