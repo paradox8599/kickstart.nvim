@@ -8,9 +8,8 @@ end
 ---@param fn_enabled fun(): boolean
 ---@param fn_toggle fun(is_enabled: boolean)
 M.toggle = function(name, fn_enabled, fn_toggle)
-  local is_enabled = fn_enabled()
-  fn_toggle(is_enabled)
-  require('snacks.notify').notify(string.format('%s %s', name, M.bool2str(not is_enabled)))
+  fn_toggle(fn_enabled())
+  require('snacks.notify').notify(string.format('%s %s', name, M.bool2str(fn_enabled())))
 end
 
 return M

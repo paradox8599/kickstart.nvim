@@ -36,7 +36,7 @@ return {
       desc = 'Toggle Ultimate Autopair',
       function()
         require('lib.utils').toggle('Ultimate Autopair', function()
-          return require('ultimate-autopair.core').disable
+          return not require('ultimate-autopair.core').disable
         end, function()
           require('ultimate-autopair').toggle()
         end)
