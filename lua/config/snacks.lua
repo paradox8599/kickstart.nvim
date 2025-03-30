@@ -99,6 +99,13 @@ vim.keymap.set('n', '<leader>ff', picker.files, { desc = 'Files' })
 vim.keymap.set('n', '<leader>fF', function()
   picker.files { ignored = true, hidden = true }
 end, { desc = 'Find All Files' })
+vim.keymap.set('n', '<leader>fO', picker.recent, { desc = 'Recent Files' })
+vim.keymap.set('n', '<leader>fo', function()
+  picker.recent {
+    filter = { cwd = true },
+    title = 'Recent (cwd)',
+  }
+end, { desc = 'Recent Files (cwd)' })
 vim.keymap.set('n', '<leader>fg', picker.git_files, { desc = 'Git Files' })
 vim.keymap.set('n', '<leader>fc', picker.grep_word, { desc = 'Current Word' })
 vim.keymap.set('n', '<leader>fb', picker.buffers, { desc = 'Buffers' })
