@@ -19,31 +19,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<leader>fs', picker.lsp_symbols, { desc = '[B]uffer Document [S]ymbols' })
     vim.keymap.set('n', '<leader>fS', picker.lsp_workspace_symbols, { desc = '[W]orkspace [S]ymbols' })
 
-    -- Highlight ref under cursor, see `:help CursorHold`
     local client = vim.lsp.get_client_by_id(event.data.client_id)
-    local supports_highlight = client_supports_method(client, vim.lsp.protocol.Methods.textDocument_documentHighlight, event.buf)
-    if client and supports_highlight then
-      local highlight_augroup = vim.api.nvim_create_augroup('cursor-lsp-highlight', { clear = false })
-      vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
-        buffer = event.buf,
-        group = highlight_augroup,
-        callback = vim.lsp.buf.document_highlight,
-      })
-
-      vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
-        buffer = event.buf,
-        group = highlight_augroup,
-        callback = vim.lsp.buf.clear_references,
-      })
-
-      vim.api.nvim_create_autocmd('LspDetach', {
-        group = vim.api.nvim_create_augroup('cursor-lsp-highlight', { clear = true }),
-        callback = function(event2)
-          vim.lsp.buf.clear_references()
-          vim.api.nvim_clear_autocmds { group = 'cursor-lsp-highlight', buffer = event2.buf }
-        end,
-      })
-    end
 
     -- The following code creates a keymap to toggle inlay hints in your code, if the language server you are using supports them
     if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then
