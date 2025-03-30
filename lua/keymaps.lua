@@ -29,7 +29,7 @@ vim.keymap.set('n', 'J', 'mzJ`z', { desc = 'Keep cursor position when J' })
 vim.keymap.set('n', '<C-q>', '<cmd>quit<cr>', { desc = 'Quit' })
 vim.keymap.set('n', '<leader>q', '<cmd>quit<cr>', { desc = 'Quit' })
 vim.keymap.set('n', '<C-s>', '<cmd>w<cr>', { desc = 'Save' })
-vim.keymap.set('n', '<leader>c', '<cmd>bd<cr>', { desc = 'Save' })
+vim.keymap.set('n', '<leader>c', '<cmd>bd<cr>', { desc = 'Close Buffer' })
 
 -- lua
 vim.keymap.set('n', '<leader>R', '<cmd>source %<cr>', { desc = 'Run this lua file' })
