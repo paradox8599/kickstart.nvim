@@ -33,6 +33,8 @@ snacks.setup {
     chunk = { enabled = false },
   },
 
+  scope = { enabled = true },
+
   -- https://github.com/folke/snacks.nvim/blob/main/docs/dashboard.md
   dashboard = {
     enabled = true,
