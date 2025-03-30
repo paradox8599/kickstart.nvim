@@ -48,5 +48,6 @@
   "tokyonight.nvim": { "branch": "main", "commit": "057ef5d260c1931f1dffd0f052c685dcd14100a3" },
   "treesj": { "branch": "main", "commit": "6c616638e3aa0087f2c267bb5990115b67105976" },
   "ultimate-autopair.nvim": { "branch": "v0.6", "commit": "b24b97c538b71b6de0ce9d84e47df27b6ecafd76" },
+  "vimade": { "branch": "master", "commit": "f63ca5cb9cf811b2c526694e820b87fe2238deb6" },
   "which-key.nvim": { "branch": "main", "commit": "370ec46f710e058c9c1646273e6b225acf47cbed" }
 }
