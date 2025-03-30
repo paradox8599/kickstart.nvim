@@ -8,7 +8,7 @@ local lint = require 'lint'
 -- instead set linters_by_ft like this:
 
 lint.linters_by_ft = lint.linters_by_ft or {}
-lint.linters_by_ft['markdown'] = { 'markdownlint' }
+-- lint.linters_by_ft['markdown'] = { 'markdownlint' }
 
 -- However, note that this will enable a set of default linters,
 -- which will cause errors unless these tools are available:
@@ -34,7 +34,7 @@ lint.linters_by_ft['inko'] = nil
 lint.linters_by_ft['janet'] = nil
 -- lint.linters_by_ft['dockerfile'] = nil
 -- lint.linters_by_ft['json'] = nil
--- lint.linters_by_ft['markdown'] = nil
+lint.linters_by_ft['markdown'] = nil
 -- lint.linters_by_ft['text'] = nil
 
 -- Create autocommand which carries out the actual linting on the specified events.
