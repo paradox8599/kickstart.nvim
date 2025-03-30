@@ -4,6 +4,7 @@ local picker = snacks.picker
 snacks.setup {
   bigfile = { notify = true, size = 1 * 1024 * 1024 },
   git = { enabled = true },
+  gitbrowse = {},
   lazygit = { enabled = true },
   quickfile = { enabled = true },
   picker = { ui_select = true },

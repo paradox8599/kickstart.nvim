@@ -69,6 +69,14 @@ return {
     --   desc = 'Select Scratch Buffer',
     -- },
 
+    {
+      '<leader>go',
+      function()
+        require('snacks').gitbrowse.open()
+      end,
+      mode = { 'n' },
+    },
+
     -- [[Terminals]]
 
     -- hide active terminal
