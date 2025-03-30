@@ -1,12 +1,12 @@
 -- Keymaps
-vim.keymap.set('n', '<leader>e', '<cmd>Neotree toggle<cr>', { desc = 'Toggle Explorer' })
+vim.keymap.set('n', '<leader>e', '<cmd>Neotree toggle<cr>', { desc = 'Explorer' })
 vim.keymap.set('n', '<leader>o', function()
   if vim.bo.filetype == 'neo-tree' then
     vim.cmd.wincmd 'p'
   else
     vim.cmd.Neotree 'focus'
   end
-end, { desc = 'Toggle Explorer Focus' })
+end, { desc = 'Explorer Focus' })
 vim.keymap.set('n', '<leader>bb', '<cmd>Neotree buffers reveal float<cr>', { desc = 'Find Buffer' })
 
 -- update git status on (lazygit) terminal close
