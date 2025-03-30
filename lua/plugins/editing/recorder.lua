@@ -1,7 +1,17 @@
 return {
   {
     'chrisgrieser/nvim-recorder',
-    -- dependencies = "rcarriga/nvim-notify", -- optional
+
+    keys = {
+
+      'q',
+      'Q',
+      '@',
+      'cq',
+      'dq',
+      'yq',
+    },
+
     opts = {
       -- Named registers where macros are saved (single lowercase letters only).
       -- The first register is the default register used as macro-slot after
@@ -16,7 +26,7 @@ return {
         deleteAllMacros = 'dq',
         yankMacro = 'yq',
         -- ⚠️ this should be a string you don't use in insert mode during a macro
-        addBreakPoint = '&',
+        addBreakPoint = '<C-p>',
       },
 
       -- Clears all macros-slots on startup.
