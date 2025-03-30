@@ -16,7 +16,7 @@ return {
       desc = 'Save',
     },
     {
-      '<leader>SD',
+      '<leader>SK',
       function()
         require('resession').save(vim.fn.getcwd(), { dir = 'dirsession', notify = false })
       end,
@@ -63,7 +63,7 @@ return {
     },
 
     {
-      '<leader>SD',
+      '<leader>Sd',
       function()
         require('resession').delete()
       end,
