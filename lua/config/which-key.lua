@@ -48,5 +48,6 @@ require('which-key').setup {
     { '<leader>g', group = 'Git' },
     { '<leader>l', group = 'LSP' },
     { '<leader>t', group = 'Terminal' },
+    { '<leader>S', group = 'Session' },
   },
 }
