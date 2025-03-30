@@ -45,5 +45,8 @@ require('which-key').setup {
     { '<leader>p', group = 'Plugins' },
     { '<leader>b', group = 'Buffer' },
     { '<leader>s', group = 'Search and Replace' },
+    { '<leader>g', group = 'Git' },
+    { '<leader>l', group = 'LSP' },
+    { '<leader>t', group = 'Terminal' },
   },
 }

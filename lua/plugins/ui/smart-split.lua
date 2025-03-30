@@ -33,28 +33,28 @@ return {
       desc = 'Resize right',
     },
     {
-      '<leader><leader>h',
+      '<leader>bh',
       function()
         require('smart-splits').swap_buf_left()
       end,
       desc = 'Swap buffer left',
     },
     {
-      '<leader><leader>j',
+      '<leader>bj',
       function()
         require('smart-splits').swap_buf_down()
       end,
       desc = 'Swap buffer down',
     },
     {
-      '<leader><leader>k',
+      '<leader>bk',
       function()
         require('smart-splits').swap_buf_up()
       end,
       desc = 'Swap buffer up',
     },
     {
-      '<leader><leader>l',
+      '<leader>bl',
       function()
         require('smart-splits').swap_buf_right()
       end,

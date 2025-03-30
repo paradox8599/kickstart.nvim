@@ -3,7 +3,10 @@ return {
 
   -- event = 'VeryLazy',
 
-  keys = { '<leader>e', '<leader>o' },
+  keys = {
+    { '<leader>e', desc = 'Explorer' },
+    { '<leader>o', desc = 'Explorer Focus' },
+  },
 
   dependencies = {
     'nvim-lua/plenary.nvim',
