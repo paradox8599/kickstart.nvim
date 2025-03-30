@@ -34,9 +34,14 @@ vim.keymap.set('n', '<leader>c', '<cmd>bd<cr>', { desc = 'Close Buffer' })
 -- lua
 vim.keymap.set('n', '<leader>R', '<cmd>source %<cr>', { desc = 'Run this lua file' })
 vim.keymap.set('n', '<leader>r', ':.lua<cr>', { desc = 'Run this line' })
-vim.keymap.set('v', '<leader>r', ':lua<cr>', { desc = 'Run selection' })
+vim.keymap.set('x', '<leader>r', ':lua<cr>', { desc = 'Run selection' })
 
 -- lsp
 vim.keymap.set('n', '<leader>lc', '<cmd>LspRestart<cr>', { desc = 'Restart LSP' })
 vim.keymap.set('n', '<leader>lr', vim.lsp.buf.rename, { desc = '[R]ename' })
 vim.keymap.set({ 'n', 'x' }, '<leader>la', vim.lsp.buf.code_action, { desc = 'Code [A]ction' })
+
+-- disables Select Mode
+vim.keymap.set('n', 'gh', '')
+vim.keymap.set('n', 'gH', '')
+vim.keymap.set('n', 'g<C-h>', '')
