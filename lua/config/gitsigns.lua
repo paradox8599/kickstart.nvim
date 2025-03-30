@@ -96,7 +96,7 @@ gitsigns.setup {
       gitsigns.diffthis '@'
     end, { desc = 'git [D]iff against last commit' })
     -- Toggles
-    map('n', '<leader>ub', gitsigns.toggle_current_line_blame, { desc = 'Toggle Inline Git [B]lame' })
+    map('n', '<leader>ub', gitsigns.toggle_current_line_blame, { desc = 'Toggle Inline [B]lame' })
     map('n', '<leader>gp', gitsigns.preview_hunk_inline, { desc = 'Git [p]review hunk inline' })
     map('n', '<leader>gP', gitsigns.preview_hunk, { desc = 'Git [p]review hunk' })
   end,

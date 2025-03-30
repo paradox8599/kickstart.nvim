@@ -2,7 +2,7 @@ return {
   'xiyaowong/transparent.nvim',
 
   keys = {
-    { '<Leader>ut', '<Cmd>TransparentToggle<CR>', desc = 'Toggle transparency' },
+    { '<Leader>ut', '<Cmd>TransparentToggle<CR>', desc = 'Toggle Transparency' },
   },
 
   opts = {
