@@ -13,8 +13,8 @@ vim.g.have_nerd_font = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 
--- Enable mouse mode, can be useful for resizing splits for example!
-vim.opt.mouse = 'a'
+-- enable mouse in normal and insert mode
+vim.opt.mouse = 'ni'
 
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
