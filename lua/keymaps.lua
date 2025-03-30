@@ -28,6 +28,7 @@ vim.keymap.set('n', 'J', 'mzJ`z', { desc = 'Keep cursor position when J' })
 -- shortcuts
 vim.keymap.set('n', '<C-q>', '<cmd>quit<cr>', { desc = 'Quit' })
 vim.keymap.set('n', '<leader>q', '<cmd>quit<cr>', { desc = 'Quit' })
+vim.keymap.set('n', '<leader>Q', '<cmd>quitall<cr>', { desc = 'Quit All' })
 vim.keymap.set('n', '<C-s>', '<cmd>w<cr>', { desc = 'Save' })
 vim.keymap.set('n', '<leader>c', '<cmd>bd<cr>', { desc = 'Close Buffer' })
 
@@ -42,6 +43,6 @@ vim.keymap.set('n', '<leader>lc', '<cmd>LspRestart<cr>', { desc = 'Restart LSP' 
 vim.keymap.set({ 'n', 'x' }, '<leader>la', vim.lsp.buf.code_action, { desc = 'Code [A]ction' })
 
 -- disables Select Mode
-vim.keymap.set('n', 'gh', '')
+-- vim.keymap.set('n', 'gh', '')
 vim.keymap.set('n', 'gH', '')
 vim.keymap.set('n', 'g<C-h>', '')

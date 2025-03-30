@@ -1,8 +1,6 @@
 return {
   'tetzng/open-github-url.nvim',
 
-  lazy = true,
-
   opts = {},
 
   keys = {
