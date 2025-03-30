@@ -89,7 +89,7 @@ snacks.setup {
 }
 
 -- toggler
-vim.keymap.set('n', '<leader>uD', snacks.notifier.hide, { desc = 'Dismiss notifications' })
+vim.keymap.set('n', '<leader>uD', snacks.notifier.hide, { desc = 'Dismiss Notifications' })
 
 -- picker
 vim.keymap.set('n', '<leader>f<Enter>', picker.resume, { desc = 'Resume' })
