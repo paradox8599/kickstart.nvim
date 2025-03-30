@@ -54,20 +54,20 @@ return {
       mode = { 'n', 't' },
     },
 
-    {
-      '<leader>.',
-      function()
-        require('snacks').scratch()
-      end,
-      desc = 'Toggle Scratch Buffer',
-    },
-    {
-      '<leader>,',
-      function()
-        require('snacks').scratch.select()
-      end,
-      desc = 'Select Scratch Buffer',
-    },
+    -- {
+    --   '<leader>.',
+    --   function()
+    --     require('snacks').scratch()
+    --   end,
+    --   desc = 'Toggle Scratch Buffer',
+    -- },
+    -- {
+    --   '<leader>,',
+    --   function()
+    --     require('snacks').scratch.select()
+    --   end,
+    --   desc = 'Select Scratch Buffer',
+    -- },
 
     -- [[Terminals]]
 
