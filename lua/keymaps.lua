@@ -22,6 +22,10 @@ vim.keymap.set({ 'n', 'x' }, '<leader>y', '"+y', { desc = 'Yank to system clipbo
 vim.keymap.set('x', '<leader>p', '"_dP', { desc = 'Paste without yank', noremap = true })
 
 -- navigation
+vim.keymap.set('n', '<Tab>', '<cmd>bnext<cr>', { silent = true })
+vim.keymap.set('n', '<S-Tab>', '<cmd>bprevious<cr>', { silent = true })
+vim.keymap.set('n', ']b', '<cmd>bnext<cr>', { silent = true })
+vim.keymap.set('n', '[b', '<cmd>bprevious<cr>', { silent = true })
 vim.keymap.set('n', '<leader>k', '<cmd>b#<cr>', { desc = 'Last buffer' })
 vim.keymap.set('n', 'J', 'mzJ`z', { desc = 'Keep cursor position when J' })
 
@@ -30,7 +34,14 @@ vim.keymap.set('n', '<C-q>', '<cmd>quit<cr>', { desc = 'Quit' })
 vim.keymap.set('n', '<leader>q', '<cmd>quit<cr>', { desc = 'Quit' })
 vim.keymap.set('n', '<leader>Q', '<cmd>quitall<cr>', { desc = 'Quit All' })
 vim.keymap.set('n', '<C-s>', '<cmd>w<cr>', { desc = 'Save' })
-vim.keymap.set('n', '<leader>c', '<cmd>bd<cr>', { desc = 'Close Buffer' })
+
+-- buffer delete
+vim.keymap.set('n', '<leader>c', function()
+  require('snacks').bufdelete.delete()
+end, { desc = 'Close Buffer', silent = true })
+vim.keymap.set('n', '<leader>bc', function()
+  require('snacks').bufdelete.other()
+end, { desc = 'Close Other Buffers', silent = true })
 
 -- lua
 vim.keymap.set('n', '<leader>R', '<cmd>source %<cr>', { desc = 'Run this lua file' })
