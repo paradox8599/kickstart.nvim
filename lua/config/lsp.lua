@@ -108,6 +108,7 @@ vim.list_extend(ensure_installed, {
   'hadolint',
   'jsonlint',
   'vale',
+  'markdownlint',
 })
 
 require('mason-tool-installer').setup { ensure_installed = ensure_installed }

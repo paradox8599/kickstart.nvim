@@ -25,8 +25,8 @@ vim.keymap.set('x', '<leader>p', '"_dP', { desc = 'Paste without yank', noremap 
 vim.keymap.set({ 'n', 'x' }, 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true, desc = 'Move cursor down' })
 vim.keymap.set({ 'n', 'x' }, 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true, desc = 'Move cursor up' })
 
-vim.keymap.set('n', '<C-d>', '15j', { desc = 'Scroll down by 5 lines' })
-vim.keymap.set('n', '<C-u>', '15k', { desc = 'Scroll up by 5 lines' })
+-- vim.keymap.set('n', '<C-d>', '30j', { desc = 'Scroll down by 5 lines' })
+-- vim.keymap.set('n', '<C-u>', '30k', { desc = 'Scroll up by 5 lines' })
 
 vim.keymap.set('n', '<Tab>', vim.cmd.bnext, { silent = true })
 vim.keymap.set('t', '<Tab>', '<Tab>', { silent = true, noremap = true })

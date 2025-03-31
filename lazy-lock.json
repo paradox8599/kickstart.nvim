@@ -1,5 +1,6 @@
 {
   "LuaSnip": { "branch": "master", "commit": "c9b9a22904c97d0eb69ccb9bab76037838326817" },
+  "SchemaStore.nvim": { "branch": "main", "commit": "e659e0c6ca06727ed898aaaeea3850f528898684" },
   "arrow.nvim": { "branch": "master", "commit": "9608ce6d7e6935efd423946a319f7f4041cbde93" },
   "astrocore": { "branch": "main", "commit": "1cb27c53d1fbe0852f1f368b706631ef4e007630" },
   "blink.cmp": { "branch": "main", "commit": "033fbcc7ec55546aa0c3889aa50b6e76915c3f62" },

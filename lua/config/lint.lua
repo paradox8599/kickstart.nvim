@@ -25,7 +25,7 @@ lint.linters_by_ft['janet'] = nil
 -- lint.linters_by_ft['text'] = nil
 
 -- set linters
--- lint.linters_by_ft['markdown'] = { 'markdownlint' }
+lint.linters_by_ft['markdown'] = { 'markdownlint' }
 
 -- actual linting
 local lint_augroup = vim.api.nvim_create_augroup('lint', { clear = true })
