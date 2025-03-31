@@ -22,6 +22,8 @@ vim.keymap.set({ 'n', 'x' }, '<leader>y', '"+y', { desc = 'Yank to system clipbo
 vim.keymap.set('x', '<leader>p', '"_dP', { desc = 'Paste without yank', noremap = true })
 
 -- navigation
+vim.keymap.set({ 'n', 'x' }, 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true, desc = 'Move cursor down' })
+vim.keymap.set({ 'n', 'x' }, 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true, desc = 'Move cursor up' })
 vim.keymap.set('n', '<Tab>', '<cmd>bnext<cr>', { silent = true })
 vim.keymap.set('n', '<S-Tab>', '<cmd>bprevious<cr>', { silent = true })
 vim.keymap.set('n', ']b', '<cmd>bnext<cr>', { silent = true })
