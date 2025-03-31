@@ -24,10 +24,17 @@ vim.keymap.set('x', '<leader>p', '"_dP', { desc = 'Paste without yank', noremap 
 -- navigation
 vim.keymap.set({ 'n', 'x' }, 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true, desc = 'Move cursor down' })
 vim.keymap.set({ 'n', 'x' }, 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true, desc = 'Move cursor up' })
+
+vim.keymap.set('n', '<C-d>', '15j', { desc = 'Scroll down by 5 lines' })
+vim.keymap.set('n', '<C-u>', '15k', { desc = 'Scroll up by 5 lines' })
+
 vim.keymap.set('n', '<Tab>', '<cmd>bnext<cr>', { silent = true })
 vim.keymap.set('n', '<S-Tab>', '<cmd>bprevious<cr>', { silent = true })
 vim.keymap.set('n', ']b', '<cmd>bnext<cr>', { silent = true })
 vim.keymap.set('n', '[b', '<cmd>bprevious<cr>', { silent = true })
+vim.keymap.set('n', 'L', '<cmd>bnext<cr>', { silent = true })
+vim.keymap.set('n', 'H', '<cmd>bprev<cr>', { silent = true })
+
 vim.keymap.set('n', '<leader>k', '<cmd>b#<cr>', { desc = 'Last buffer' })
 vim.keymap.set('n', 'J', 'mzJ`z', { desc = 'Keep cursor position when J' })
 
@@ -36,6 +43,9 @@ vim.keymap.set('n', '<C-q>', '<cmd>quit<cr>', { desc = 'Quit' })
 vim.keymap.set('n', '<leader>q', '<cmd>quit<cr>', { desc = 'Quit' })
 vim.keymap.set('n', '<leader>Q', '<cmd>quitall<cr>', { desc = 'Quit All' })
 vim.keymap.set('n', '<C-s>', '<cmd>w<cr>', { desc = 'Save' })
+
+vim.keymap.set('n', '+', '<C-w>|<C-w>_', { desc = 'Maximize current pane' })
+vim.keymap.set('n', '=', '<C-w>=', { desc = 'Restore pane sizes' })
 
 -- buffer delete
 vim.keymap.set('n', '<leader>c', function()
@@ -46,9 +56,9 @@ vim.keymap.set('n', '<leader>bc', function()
 end, { desc = 'Close Other Buffers', silent = true })
 
 -- lua
-vim.keymap.set('n', '<leader>R', '<cmd>source %<cr>', { desc = 'Run this lua file' })
-vim.keymap.set('n', '<leader>r', ':.lua<cr>', { desc = 'Run this line' })
-vim.keymap.set('x', '<leader>r', ':lua<cr>', { desc = 'Run selection' })
+vim.keymap.set('n', '<leader><leader>R', '<cmd>source %<cr>', { desc = 'Run this lua file' })
+vim.keymap.set('n', '<leader><leader>r', ':.lua<cr>', { desc = 'Run this line' })
+vim.keymap.set('x', '<leader><leader>r', ':lua<cr>', { desc = 'Run selection' })
 
 -- lsp
 -- vim.keymap.set('n', '<leader>lr', vim.lsp.buf.rename, { desc = '[R]ename' })
