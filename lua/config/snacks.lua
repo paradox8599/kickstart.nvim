@@ -1,5 +1,6 @@
 local snacks = require 'snacks'
 local picker = snacks.picker
+local terminal = snacks.terminal
 
 snacks.setup {
   bigfile = { notify = true, size = 1 * 1024 * 1024 },
@@ -106,23 +107,23 @@ end, { desc = 'Prev Reference' })
 vim.keymap.set('t', '<C-i>', ':hide<cr>', { desc = 'Hide terminal' })
 vim.keymap.set('n', '<leader>gg', snacks.lazygit.open, { desc = 'LazyGit' })
 vim.keymap.set('n', '<leader>td', function()
-  snacks.terminal.toggle 'lazydocker'
+  terminal.toggle 'lazydocker'
 end, { desc = 'LazyDocker' })
 vim.keymap.set('n', '<leader>tw', function()
-  snacks.terminal.toggle 'yazi'
+  terminal.toggle 'yazi'
 end, { desc = 'Yazi' })
 vim.keymap.set('n', '<leader>tb', function()
-  snacks.terminal.toggle 'btm'
+  terminal.toggle 'btm'
 end, { desc = 'Btm' })
 -- aider
 vim.keymap.set('n', '<leader>tA', function()
-  snacks.terminal.toggle('aider', { win = { position = 'right', width = 0.4 } })
+  terminal.toggle('aider', { win = { position = 'right', width = 0.4 } })
 end, { desc = 'Aider' })
 vim.keymap.set('n', '<Leader>ta', function()
   ---@diagnostic disable-next-line: undefined-field
   local filepath = vim.uv.fs_realpath(vim.api.nvim_buf_get_name(0))
   filepath = '"' .. filepath .. '"'
-  snacks.terminal.toggle('aider ' .. filepath, { win = { position = 'right', width = 0.4 } })
+  terminal.toggle('aider ' .. filepath, { win = { position = 'right', width = 0.4 } })
 end, { desc = 'Aider with current file' })
 
 -- picker
