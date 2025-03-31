@@ -8,7 +8,7 @@ require('overseer').setup {
       ['<C-h>'] = false,
       ['<C-k>'] = false,
       ['<C-j>'] = false,
-      q = '<Cmd>close<CR>',
+      q = vim.cmd.close,
       K = 'IncreaseDetail',
       J = 'DecreaseDetail',
       ['<C-p>'] = 'ScrollOutputUp',

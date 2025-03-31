@@ -2,7 +2,7 @@ return {
   'Wansmer/treesj',
 
   keys = {
-    { '<leader>j', '<CMD>TSJToggle<CR>', desc = 'Split/Join' },
+    { '<leader>j', vim.cmd.TSJToggle, desc = 'Split/Join' },
   },
 
   cmd = { 'TSJToggle', 'TSJSplit', 'TSJJoin' },

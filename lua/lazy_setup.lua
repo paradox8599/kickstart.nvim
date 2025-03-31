@@ -1,5 +1,5 @@
-vim.keymap.set('n', '<leader>ps', '<cmd>Lazy<cr>', { desc = 'Lazy' })
-vim.keymap.set('n', '<leader>pm', '<cmd>Mason<cr>', { desc = 'Mason' })
+vim.keymap.set('n', '<leader>ps', vim.cmd.Lazy, { desc = 'Lazy' })
+vim.keymap.set('n', '<leader>pm', vim.cmd.Mason, { desc = 'Mason' })
 
 require('lazy').setup(
   {

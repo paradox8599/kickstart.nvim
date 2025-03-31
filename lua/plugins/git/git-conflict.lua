@@ -17,7 +17,7 @@ return {
     'GitConflictPrevConflict',
   },
   keys = {
-    { '<leader>gx', '<cmd>GitConflictListQf<cr>', desc = 'Git conflict list' },
+    { '<leader>gx', vim.cmd.GitConflictListQf, desc = 'Git conflict list' },
   },
   opts = {
     default_mappings = true, -- disable buffer local mapping created by this plugin

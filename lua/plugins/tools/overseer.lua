@@ -21,12 +21,12 @@ return {
 
   keys = {
     { '<leader>m', desc = ' Overseer' },
-    { '<leader>mt', '<Cmd>OverseerToggle<CR>', desc = 'Toggle Overseer' },
-    { '<leader>mc', '<Cmd>OverseerRunCmd<CR>', desc = 'Run Command' },
-    { '<leader>mr', '<Cmd>OverseerRun<CR>', desc = 'Run Task' },
-    { '<leader>mq', '<Cmd>OverseerQuickAction<CR>', desc = 'Quick Action' },
-    { '<leader>ma', '<Cmd>OverseerTaskAction<CR>', desc = 'Task Action' },
-    { '<leader>mi', '<Cmd>OverseerInfo<CR>', desc = 'Overseer Info' },
+    { '<leader>mt', vim.cmd.OverseerToggle, desc = 'Toggle Overseer' },
+    { '<leader>mc', vim.cmd.OverseerRunCmd, desc = 'Run Command' },
+    { '<leader>mr', vim.cmd.OverseerRun, desc = 'Run Task' },
+    { '<leader>mq', vim.cmd.OverseerQuickAction, desc = 'Quick Action' },
+    { '<leader>ma', vim.cmd.OverseerTaskAction, desc = 'Task Action' },
+    { '<leader>mi', vim.cmd.OverseerInfo, desc = 'Overseer Info' },
   },
 
   config = function()

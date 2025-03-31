@@ -4,6 +4,6 @@ return {
   opts = {},
 
   keys = {
-    { 'gh', '<cmd>OpenGitHubUrlUnderCursor<cr>', desc = 'Open github url' },
+    { 'gh', vim.cmd.OpenGitHubUrlUnderCursor, desc = 'Open github url' },
   },
 }
