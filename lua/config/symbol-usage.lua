@@ -64,7 +64,6 @@ end
 
 require('symbol-usage').setup {
   text_format = text_format,
-  ---@type 'above'|'end_of_line'|'textwidth'|'signcolumn' `above` by default
   vt_position = 'above',
   request_pending_text = 'loading...',
   references = { enabled = true, include_declaration = false },
