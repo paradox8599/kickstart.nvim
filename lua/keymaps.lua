@@ -29,6 +29,7 @@ vim.keymap.set('n', '<C-d>', '15j', { desc = 'Scroll down by 5 lines' })
 vim.keymap.set('n', '<C-u>', '15k', { desc = 'Scroll up by 5 lines' })
 
 vim.keymap.set('n', '<Tab>', vim.cmd.bnext, { silent = true })
+vim.keymap.set('t', '<Tab>', '<Tab>', { silent = true, noremap = true })
 vim.keymap.set('n', '<S-Tab>', vim.cmd.bprevious, { silent = true })
 vim.keymap.set('n', ']b', vim.cmd.bnext, { silent = true })
 vim.keymap.set('n', '[b', vim.cmd.bprevious, { silent = true })

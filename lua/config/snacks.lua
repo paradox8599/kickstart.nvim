@@ -88,6 +88,43 @@ snacks.setup {
 -- toggler
 vim.keymap.set('n', '<leader>uD', snacks.notifier.hide, { desc = 'Dismiss Notifications' })
 
+-- Git mappings
+vim.keymap.set('n', '<leader>gf', snacks.lazygit.log_file, { desc = 'Git History (Current File)' })
+vim.keymap.set('n', '<leader>gl', snacks.lazygit.log, { desc = 'Git Log' })
+vim.keymap.set('n', '<leader>br', snacks.rename.rename_file, { desc = 'Rename File' })
+vim.keymap.set('n', '<leader>go', snacks.gitbrowse.open, { desc = 'Git Browse' })
+
+-- Word navigation
+vim.keymap.set({ 'n', 't' }, ']]', function()
+  snacks.words.jump(vim.v.count1)
+end, { desc = 'Next Reference' })
+vim.keymap.set({ 'n', 't' }, '[[', function()
+  snacks.words.jump(-vim.v.count1)
+end, { desc = 'Prev Reference' })
+
+-- Terminal mappings
+vim.keymap.set('t', '<C-i>', ':hide<cr>', { desc = 'Hide terminal' })
+vim.keymap.set('n', '<leader>gg', snacks.lazygit.open, { desc = 'LazyGit' })
+vim.keymap.set('n', '<leader>td', function()
+  snacks.terminal.toggle 'lazydocker'
+end, { desc = 'LazyDocker' })
+vim.keymap.set('n', '<leader>tw', function()
+  snacks.terminal.toggle 'yazi'
+end, { desc = 'Yazi' })
+vim.keymap.set('n', '<leader>tb', function()
+  snacks.terminal.toggle 'btm'
+end, { desc = 'Btm' })
+-- aider
+vim.keymap.set('n', '<leader>tA', function()
+  snacks.terminal.toggle('aider', { win = { position = 'right', width = 0.4 } })
+end, { desc = 'Aider' })
+vim.keymap.set('n', '<Leader>ta', function()
+  ---@diagnostic disable-next-line: undefined-field
+  local filepath = vim.uv.fs_realpath(vim.api.nvim_buf_get_name(0))
+  filepath = '"' .. filepath .. '"'
+  snacks.terminal.toggle('aider ' .. filepath, { win = { position = 'right', width = 0.4 } })
+end, { desc = 'Aider with current file' })
+
 -- picker
 vim.keymap.set('n', '<leader>f<Enter>', picker.resume, { desc = 'Resume' })
 vim.keymap.set('n', '<leader>f;', picker.pickers, { desc = 'Picker Sources' })
