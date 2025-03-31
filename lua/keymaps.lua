@@ -65,6 +65,7 @@ vim.keymap.set('x', '<leader><leader>r', '<cmd>lua<cr>', { desc = 'Run selection
 -- vim.keymap.set('n', '<leader>lr', vim.lsp.buf.rename, { desc = '[R]ename' })
 vim.keymap.set('n', '<leader>lc', vim.cmd.LspRestart, { desc = 'Restart LSP' })
 vim.keymap.set({ 'n', 'x' }, '<leader>la', vim.lsp.buf.code_action, { desc = 'Code [A]ction' })
+vim.keymap.set({ 'n', 'x' }, 'gl', vim.diagnostic.open_float, { desc = 'Hover diagnostic' })
 
 -- disables Select Mode
 -- vim.keymap.set('n', 'gh', '')
