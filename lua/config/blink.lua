@@ -41,13 +41,17 @@ require('blink.cmp').setup {
 
     accept = { auto_brackets = { enabled = true } },
 
-    documentation = { auto_show = true, auto_show_delay_ms = 150 },
+    ghost_text = { enabled = true },
 
     list = { selection = { preselect = false, auto_insert = true } },
 
-    menu = { auto_show = true },
+    documentation = {
+      auto_show = true,
+      auto_show_delay_ms = 150,
+      window = { border = 'rounded' },
+    },
 
-    ghost_text = { enabled = true },
+    menu = { auto_show = true, border = 'rounded' },
   },
 
   fuzzy = { implementation = 'prefer_rust_with_warning' },
@@ -63,6 +67,9 @@ require('blink.cmp').setup {
 
   signature = {
     enabled = true,
-    window = { show_documentation = true },
+    window = {
+      show_documentation = true,
+      border = 'rounded',
+    },
   },
 }
