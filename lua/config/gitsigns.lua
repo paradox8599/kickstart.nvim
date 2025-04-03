@@ -82,7 +82,7 @@ gitsigns.setup {
     map('x', '<leader>gs', function()
       gitsigns.stage_hunk { vim.fn.line '.', vim.fn.line 'v' }
     end, { desc = 'git [s]tage hunk' })
-    map('x', '<leader>hr', function()
+    map('x', '<leader>gr', function()
       gitsigns.reset_hunk { vim.fn.line '.', vim.fn.line 'v' }
     end, { desc = 'git [r]eset hunk' })
     -- normal mode
