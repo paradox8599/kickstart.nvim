@@ -19,6 +19,18 @@ vim.api.nvim_create_autocmd('TermClose', {
   end,
 })
 
+local git_available = (vim.fn.executable 'git' == 1)
+
+local sources = {
+  { source = 'filesystem', display_name = 'File' },
+  { source = 'buffers', display_name = 'Bufs' },
+  { source = 'diagnostics', display_name = 'Diagnostic' },
+}
+
+if git_available then
+  table.insert(sources, 3, { source = 'git_status', display_name = 'Git' })
+end
+
 require('neo-tree').setup {
   close_if_last_window = true,
   popup_border_style = 'rounded',
@@ -26,16 +38,32 @@ require('neo-tree').setup {
   enable_diagnostics = true,
   sort_case_insensitive = true,
 
+  sources = {
+    'filesystem',
+    'buffers',
+    git_available and 'git_status' or nil,
+  },
+  source_selector = {
+    winbar = true,
+    content_layout = 'center',
+    sources = sources,
+  },
+
   -- Window options
   window = {
     position = 'left',
     width = 30,
     mappings = {
-      ['<tab>'] = 'toggle_node',
+      ['<tab>'] = 'next_source',
+      ['<s-tab>'] = 'prev_source',
+      [']b'] = 'next_source',
+      ['[b'] = 'prev_source',
       ['<2-LeftMouse>'] = 'open',
       ['<cr>'] = 'open',
-      ['l'] = 'open',
-      ['h'] = 'close_node',
+      ['<S-CR>'] = 'system_open',
+      ['O'] = 'system_open',
+      ['l'] = 'child_or_open',
+      ['h'] = 'parent_or_close',
       ['P'] = { 'toggle_preview', config = { use_float = true } },
       ['S'] = 'open_split',
       ['s'] = 'open_vsplit',
@@ -59,10 +87,9 @@ require('neo-tree').setup {
     filtered_items = {
       visible = false,
       hide_dotfiles = true,
-      hide_gitignored = true,
+      hide_gitignored = git_available,
       hide_by_name = {
         'node_modules',
-        '.git',
         '.DS_Store',
         'thumbs.db',
       },
@@ -153,10 +180,45 @@ require('neo-tree').setup {
         end
       end,
     },
+
     kind_icon = {
       provider = function(icon, node)
         icon.text, icon.highlight = require('mini.icons').get('lsp', node.extra.kind.name)
       end,
     },
+  },
+  commands = {
+    ---@diagnostic disable-next-line: redundant-parameter
+    system_open = function(state)
+      vim.ui.open(state.tree:get_node():get_id())
+    end,
+
+    ---@diagnostic disable-next-line: redundant-parameter
+    parent_or_close = function(state)
+      local node = state.tree:get_node()
+      if node:has_children() and node:is_expanded() then
+        state.commands.toggle_node(state)
+      else
+        require('neo-tree.ui.renderer').focus_node(state, node:get_parent_id())
+      end
+    end,
+
+    ---@diagnostic disable-next-line: redundant-parameter
+    child_or_open = function(state)
+      local node = state.tree:get_node()
+      if node:has_children() then
+        if not node:is_expanded() then -- if unexpanded, expand
+          state.commands.toggle_node(state)
+        else -- if expanded and has children, seleect the next child
+          if node.type == 'file' then
+            state.commands.open(state)
+          else
+            require('neo-tree.ui.renderer').focus_node(state, node:get_child_ids()[1])
+          end
+        end
+      else -- if has no children
+        state.commands.open(state)
+      end
+    end,
   },
 }
