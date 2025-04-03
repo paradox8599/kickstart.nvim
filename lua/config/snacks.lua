@@ -104,7 +104,7 @@ vim.keymap.set({ 'n', 't' }, '[[', function()
 end, { desc = 'Prev Reference' })
 
 -- Terminal mappings
-vim.keymap.set('t', '<C-i>', ':hide<cr>', { desc = 'Hide terminal' })
+vim.keymap.set('t', '<C-i>', vim.cmd.hide, { desc = 'Hide terminal' })
 vim.keymap.set('n', '<leader>gg', snacks.lazygit.open, { desc = 'LazyGit' })
 vim.keymap.set('n', '<leader>td', function()
   terminal.toggle 'lazydocker'

@@ -7,11 +7,11 @@
 -- clear search highlights
 vim.keymap.set('n', '<Esc>', vim.cmd.nohlsearch, { desc = 'Clear search highlights' })
 
-vim.keymap.set('t', '<C-i>', vim.cmd.hide, { desc = 'Hide Terminal' })
-vim.keymap.set('t', '<C-h>', vim.cmd [[wincmd h]], { desc = 'Move focus to the left window' })
-vim.keymap.set('t', '<C-j>', vim.cmd [[wincmd j]], { desc = 'Move focus to the lower window' })
-vim.keymap.set('t', '<C-k>', vim.cmd [[wincmd k]], { desc = 'Move focus to the upper window' })
-vim.keymap.set('t', '<C-l>', vim.cmd [[wincmd l]], { desc = 'Move focus to the right window' })
+-- temrinal keymaps
+vim.keymap.set('t', '<C-h>', '<cmd>wincmd h<cr>', { desc = 'Move focus to the left window' })
+vim.keymap.set('t', '<C-j>', '<cmd>wincmd j<cr>', { desc = 'Move focus to the lower window' })
+vim.keymap.set('t', '<C-k>', '<cmd>wincmd k<cr>', { desc = 'Move focus to the upper window' })
+vim.keymap.set('t', '<C-l>', '<cmd>wincmd l<cr>', { desc = 'Move focus to the right window' })
 
 -- split
 vim.keymap.set('n', '\\', vim.cmd.sp, { desc = 'Split window horizontally' })
